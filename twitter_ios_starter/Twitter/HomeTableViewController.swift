@@ -13,13 +13,10 @@ class HomeTableViewController: UITableViewController {
    
     var tweetArray = [NSDictionary]()
     var numberOfTweets: Int!
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         loadTweets()
-
     }
     
     func loadTweets(){
@@ -33,7 +30,6 @@ class HomeTableViewController: UITableViewController {
             self.tweetArray.removeAll()
             
             for tweet in tweets {
-                
                 self.tweetArray.append(tweet)
             }
             
@@ -57,9 +53,13 @@ class HomeTableViewController: UITableViewController {
         
     }
     
+    
+    
+    
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "tweetCell", for: indexPath) as! TwwetCellTableViewCell
         
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tweetCell", for: indexPath) as! TwwetCellTableViewCell
         
         let user = tweetArray[indexPath.row]["user"] as! NSDictionary
         
@@ -69,6 +69,8 @@ class HomeTableViewController: UITableViewController {
         return cell
         
     }
+    
+    
     
     
     // MARK: - Table view data source
